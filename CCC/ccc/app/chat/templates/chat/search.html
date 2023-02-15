@@ -1,0 +1,34 @@
+<div id="search-panel">
+    <form id="search-bar" method="POST">
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" name="query" id="query" required>
+            {% if room_status %}
+            <button id="submit-search" class="btn btn-outline-secondary" type="submit">Search</button>
+            {% else %}
+            <button id="submit-search" class="btn btn-outline-secondary" type="submit" disabled>Search</button>
+            {% endif %}
+        </div>
+        <input type="hidden" name="indices" id=amazon_radio value=general checked>
+    </form>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="list-group" id="search-results"></div>
+            <nav hidden id="general-pagination">
+                <ul class="pagination" id="general-list">
+                    <li onclick="previousPage('general')" class="page-item page-list" id="general-page-list">
+                        <a class="page-link">
+                            Previous
+                        </a>
+                    </li>
+
+                    <li onclick="nextPage('general')" class="page-item" id="general-next-page">
+                        <a class="page-link">
+                            Next
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>

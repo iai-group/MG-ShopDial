@@ -1,0 +1,26 @@
+{% extends "chat/base.html" %}
+{% block title %}WoZ User{% endblock %}
+
+{% block content %}
+<div class="row justify-content-md-center" id="room-info">
+    <div class="col-md-auto">Room: {{ room }}</div>
+    <div class="col-md-auto">
+        <p class="badge bg-danger rounded-pill" id="timer">00:17:00</p>
+    </div>
+</div>
+<div class="row container">
+    <div class="col-md-6 border">
+        {% include 'chat/chat.html' %}
+    </div>
+    <div class="col-md-6 text-left border">
+        {% include 'chat/user_task_template.html' %}
+    </div>
+</div>
+
+{% endblock %}
+
+{% block script %}
+<script id="chat_client" src="{{ url_for('chat_bp.static', filename='js/chat.js') }}" user="{{user}}" room="{{room}}"
+    scenario="{{scenario}}" initial-status="{{room_status}}" leave-url="{{url_for('chat_bp.leave_room')}}"></script>
+
+{% endblock %}

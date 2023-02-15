@@ -1,0 +1,67 @@
+<h4>Instructions</h4>
+
+<div>
+    The goal of the conversation is to have a rich discussion with a client who you will help and support in
+    their shopping.
+    You have three objectives for this task:
+</div>
+
+<ol type="1">
+    <li>Determine what the client is looking for. If necessary, you can ask questions to clarify
+        the client's need.</li>
+    <li>Elicit the client's preferences to make the best suggestions possible.</li>
+    <li>Answer factual and general questions about a specific item, property, brand, etc.</li>
+</ol>
+
+<!-- The first one is to determine what the client is looking for. If necessary, you
+can ask questions to clarify the client’s need. The second is to elicit the client's preferences to make the best
+suggestions possible. The third one is to answer factual and general questions about a specific item, property, brand, etc.
+We want them to be curious about the recommended items and take a lot of turns to learn all the information necessary to help them make a decision. -->
+
+<div>
+    Below you have a checklist of what is expected for this conversation. Some items on the list are not necessarily
+    in chronological order, like for example, answering factual questions. It is important to keep in mind that
+    the conversation should be as natural as possible. If you don't understand what the client is saying, don't be
+    afraid to ask questions. Also, we want the client to be curious about the recommended items and take a lot of turns
+    to get all the information they need to make a decision on the items to buy. Feel free to give a short explanation
+    on why you recommended a specific item.
+</div>
+
+<div>
+    <span>&#9888;</span> Only use the search bar on this page for your searches.
+    <p><strong>Do not hesitate to let the client know that you may take some time to answer their request. A pre-defined
+            message
+            is available below the message area.</strong></p>
+</div>
+
+<h4>Checklist</h4>
+
+<div>
+    <form id="chat-checklist" method="POST">
+        <!-- action="leave" -->
+        <label><input type="checkbox" id="u-task1" name="checklist" value="greetings">
+            Greetings</label><br>
+        <label>
+            <input type="checkbox" id="u-task2" name="checklist" value="need">
+            Determine client's need (e.g., what are they looking for? do they have any
+            constraints?)</label><br>
+        <label><input type="checkbox" id="u-task3" name="checklist" value="clarify">
+            Ask clarification questions if necessary</label><br>
+        <label><input type="checkbox" id="u-task4" name="checklist" value="preferences">
+            Elicit client's preferences</label><br>
+        <label><input type="checkbox" id="u-task5" name="checklist" value="first-recommend">
+            Make a first recommendation of 3-4 items that fit client's need and preferences</label><br>
+        <label> <input type="checkbox" id="u-task6" name="checklist" value="qa">
+            Answer factual questions asked by the user</label><br>
+        <label><input type="checkbox" id="u-task7" name="checklist" value="search">
+            Answer general questions asked by the user</label><br>
+        <label><input type="checkbox" id="u-task8" name="checklist" value="second-recommend">
+            Refine the recommendation if the client's need or preferences change</label><br>
+        <label><input type="checkbox" id="u-task9" name="checklist" value="end">
+            Gracefully end the conversation</label><br>
+        <input type="hidden" id="nb-tasks" name="nb-tasks" value="9">
+        <input type="hidden" id="room-id" name="room-id" value="{{ room }}">
+        <input type="hidden" id="private-room-id" name="private-room-id""><br>
+        <button class=" btn btn-primary" type="submit">Leave room</button>
+    </form>
+</div>

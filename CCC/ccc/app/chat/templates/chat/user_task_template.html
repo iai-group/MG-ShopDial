@@ -1,0 +1,66 @@
+<h4>Instructions</h4>
+
+<div>
+    <strong>{{scenario.desc}}</strong>
+    <br>
+    The goal of the conversation is to have a rich discussion with a retail assistant who will help and support you in
+    your shopping.
+    You have three objectives for this task:
+</div>
+
+<ol type="1">
+    <li>Express what you are looking for, and any constraints you may have (e.g., budget, personal preferences).</li>
+    <li>Ask factual and general questions about recommended items. For example you can ask information about the brand
+        and its actions, what are the advantages of a characteristic over another, or what is the price.<strong> More
+            generally be curious</strong>.</li>
+    <li>Make a final decision on which items to buy based on your conversation with the
+        assistant.</li>
+</ol>
+
+<!-- The first one is to express what you are looking for as clearly as possible, and any constraints you may have such as
+your budget, your personal preferences. The second one is to be curious about the items recommended by the assistant and
+ask factual and general questions about them; for example you can ask information about the brand and its actions, what
+are the advantages of a characteristic over another, or what is the price. You can ask the assistant to refine the
+recommended items based on the previous information you collected. The last objective is to use the previous information
+to choose which items to buy. -->
+
+<div>
+    Below you have a checklist of what is expected for this conversation. Some items of the list are not necessarily in
+    chronological order like for example asking factual questions which can be done throughout the conversation. It is
+    important to keep in mind that the conversation should be as natural as possible.
+</div>
+
+<div>
+    <span>&#9888;</span> The retail assistant might be slow to answer, please be patient.
+</div>
+
+<h4>Checklist</h4>
+
+<div>
+    <form id="chat-checklist" method="POST">
+        <!-- action="leave" -->
+        <label><input type="checkbox" id="u-task1" name="checklist" value="greetings">
+            Greetings</label><br>
+        <label><input type="checkbox" id="u-task2" name="checklist" value="need">
+            Inform the retail assistant about what you are looking for</label><br>
+        <label><input type="checkbox" id="u-task3" name="checklist" value="preferences">
+            Inform the retail assistant about your preferences</label><br>
+        <label><input type="checkbox" id="u-task4" name="checklist" value="qa">
+            Ask factual questions about the recommended items</label><br>
+        <label><input type="checkbox" id="u-task5" name="checklist" value="search">
+            Ask general questions about the recommended items</label><br>
+        <label>
+            <input type="checkbox" id="u-task6" name="checklist" value="refine">
+            Based on previous utterances ask the retail assistant to
+            refine the list of recommended
+            items with new constraints</label><br>
+        <label><input type="checkbox" id="u-task7" name="checklist" value="decision">
+            Choose an item to buy or express your dissatisfaction with the recommended items</label><br>
+        <label><input type="checkbox" id="u-task8" name="checklist" value="end">
+            Gracefully end the conversation</label>
+        <input type="hidden" id="nb-tasks" name="nb-tasks" value="8">
+        <input type="hidden" id="room-id" name="room-id" value="{{ room }}">
+        <input type="hidden" id="private-room-id" name="private-room-id"><br>
+        <button class="btn btn-primary" type="submit">Leave room</button>
+    </form>
+</div>

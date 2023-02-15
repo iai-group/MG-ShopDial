@@ -1,0 +1,81 @@
+{% extends "chat/base.html" %}
+
+{% block header %}
+<header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+    <p class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+        <span class="fs-4">Virtual shopping assistant</span>
+    </p>
+
+    <ul class="nav nav-pills">
+        <li class="nav-item">
+            <a href="{{ url_for('auth_bp.logout') }}" class="nav-link active" onclick="logout()">Log out</a>
+        </li>
+    </ul>
+</header>
+{% endblock %}
+
+{% block content %}
+
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+    {{ messages[-1] }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endif %}
+{% endwith %}
+
+<div class="row">
+    <p>Welcome {{ user.username }}.</p>
+</div>
+
+<meta id="user" data-user="{{ user }}">
+
+<div class="row" id="rooms-container">
+    <!-- <div class="col-sm-3">
+        <div class="card">
+            <div class="card-body">
+                <p class="card-title">Users in the lobby</p>
+                <ul class="row lobby-log list-group-flush"></ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-9"> -->
+    <div id="rooms">
+        {% for room in rooms %}
+        {% if user.role=="0" %}
+        {% if not room.is_full and room.has_assistant %}
+        <button type="button" class="btn btn-success" id="{{room.room_id}}"
+            onclick="joinChat({{user.user_id}},{{user.role}},'{{room.room_id}}')">{{room.room_id}}</button>
+        {% else %}
+        <button type="button" class="btn btn-danger" id="{{room.room_id}}"
+            onclick="joinChat({{user.user_id}},{{user.role}},'{{room.room_id}}')" disabled>{{room.room_id}}</button>
+        {% endif %}
+        {% else %}
+        <button type="button" class="btn btn-success" id="{{room.room_id}}"
+            onclick="joinChat({{user.user_id}},{{user.role}},'{{room.room_id}}')">{{room.room_id}}</button>
+        {% endif %}
+        {% endfor %}
+    </div>
+</div>
+
+<!-- <div class="row lobby-log"></div> -->
+
+{% endblock %}
+
+{% block footer %}
+<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+    <div class="col-md-4 d-flex align-items-center">
+        <span class="mb-3 mb-md-0 text-muted">Virtual shopping assistant. IAI, 2022</span>
+    </div>
+
+    <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+        <li class="ms-3"><a class="nav-link px-2 text-muted" href="{{ url_for('terms_of_use') }}">Terms of
+                Use</a></li>
+    </ul>
+</footer>
+{% endblock %}
+
+{% block script %}
+<script id="lobby_client" src="{{ url_for('chat_bp.static', filename='js/lobby.js') }}"></script>
+{% endblock %}

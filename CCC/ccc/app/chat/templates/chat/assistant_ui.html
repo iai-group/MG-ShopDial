@@ -1,0 +1,74 @@
+{% extends "chat/base.html" %}
+{% block title %}CCC Assistant{% endblock %}
+
+{% block content %}
+<div class="row container justify-content-md-center" id="room-info">
+    <div class="col-md-auto">Room: {{ room }}</div>
+    <div class="col-md-auto">
+        <p class="badge bg-danger rounded-pill" id="timer">00:17:00</p>
+    </div>
+</div>
+
+<div class="row container">
+    <div class="col-md-6 border">
+        {% include 'chat/chat.html' %}
+    </div>
+    <div class="col-md-6 border">
+        {% include 'chat/assistant_task_template.html' %}
+    </div>
+</div>
+<br>
+
+<div class="row container">
+    <div class="col-md-12">
+        <h3 class="mb-3">Products available</h3>
+    </div>
+    <div class="col-md-12 input-group">
+        <input class="form-control" type="text" id="search-products" onkeyup="searchProducts()"
+            placeholder="Search within available products">
+    </div>
+    <div class="col-md-12">
+
+        <div class="list-group" id="products-list">
+            {% for product in products %}
+            <div class="list-group-item rounded-3 border-0">
+                <div class="card mb-3">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src={{product["images"]}} class="img-fluid rounded-start">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">{{product["name"]}}</h5>
+                                <span>{{ product["price"] }}</span><br>
+                                <span>Rating: {{ product["rating"] }}</span>
+                                <p class="card-text">{{ product["short_description"] }}</p>
+                                {% if product["product_description"] %}
+                                <p class="card-text"><i>More information:</i> {{ product["product_description"] }}
+                                </p>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor%}
+        </div>
+    </div>
+</div>
+
+
+<div class="row container">
+    <h3 class="mb-3">Search engine</h3>
+    {% include 'chat/search.html' %}
+</div>
+
+{% endblock %}
+
+{% block script %}
+<script id="chat_client" src="{{ url_for('chat_bp.static', filename='js/chat.js') }}" user="{{user}}" room="{{room}}"
+    leave-url="{{url_for('chat_bp.leave_room')}}" scenario="{{scenario}}"></script>
+<script id="search_engine" src="{{ url_for('chat_bp.static', filename='js/search.js') }}"
+    url="{{url_for('chat_bp.search')}}"></script>
+
+{% endblock %}

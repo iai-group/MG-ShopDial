@@ -1,0 +1,28 @@
+<div id="info-log">
+    <div class='bg-white fst-italic text-dark'>Waiting for other participants to start the chat.</div>
+</div>
+
+<div id="chat" class="border" style="min-height: 50px">
+    <div class="msg-wrapper" id="msg-box"></div>
+</div>
+
+
+<div>
+    <small id="isTyping"></small>
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" id="msg_text" placeholder="Enter your message here" oninput="typing()"
+            onkeypress="keyPressed(event)">
+        {% if room_status %}
+        <button type="button" id="send" class="btn btn-outline-success"><i class="bi bi-send-fill"></i></button>
+        {% else %}
+        <button type="button" id="send" class="btn btn-outline-success" disabled><i
+                class="bi bi-send-fill"></i></button>
+        {% endif %}
+    </div>
+    {% if user.role == "1" %}
+    <div>
+        <button class="badge rounded-pill bg-light text-dark" id="stalling">I am looking for some options, just give
+            me a minute.</button>
+    </div>
+    {% endif %}
+</div>

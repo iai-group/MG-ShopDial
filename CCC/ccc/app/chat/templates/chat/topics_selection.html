@@ -1,0 +1,21 @@
+{% extends "chat/base.html" %}
+
+{% block content %}
+<div class="row">
+    <p>Welcome {{ username }}.</p>
+</div>
+
+<div class="row">
+    <p>Please select your favorite topics:</p>
+    <form action="topics" method="POST">
+        {% for topic in topics %}
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" name="preferred-topic" id={{topic|replace(" ", "-")}}
+                value={{topic|replace(" ", "-")}}>
+            <label class="form-check-label" for={{topic|replace(" ", "-")}}>{{ topic }}</label>
+        </div>
+        {% endfor %}
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+{% endblock %}
