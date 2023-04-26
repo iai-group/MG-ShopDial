@@ -2,7 +2,7 @@
 
 This repository provides resources developed within the following article:
 
-> N. Bernard and K. Balog. **MG-ShopDial: A Multi-Goal Conversational Dataset for e-Commerce** In: Proceedings of the 46th International ACM SIGIR Conference on Research and Development in Information Retrieval (SIGIR '23), July 23--27, 2023, Taipei, Taiwan. ACM. New York, NY, USA. July 2023. [DOI: 10.1145/3539618.3591883](https://doi.org/10.1145/3539618.3591883) [PDF](https://arxiv.org/pdf/2304.12636.pdf)
+> N. Bernard and K. Balog. **MG-ShopDial: A Multi-Goal Conversational Dataset for e-Commerce** In: Proceedings of the 46th International ACM SIGIR Conference on Research and Development in Information Retrieval (SIGIR '23), July 23--27, 2023, Taipei, Taiwan. ACM. New York, NY, USA. July 2023. [DOI: 10.1145/3539618.3591883](https://doi.org/10.1145/3539618.3591883) [[PDF]](https://arxiv.org/pdf/2304.12636.pdf)
 
 ## Summary
 
