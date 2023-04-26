@@ -1,0 +1,22 @@
+# Setup
+title: MG-ShopDial
+description: A Multi-Goal Conversational Dataset for e-Commerce
+
+baseurl: "/MG-ShopDial"
+paginate: 1
+
+# About/contact
+author:
+  name: IAI group
+  url: http://iai.group
+
+# Gems
+gems:
+  - jekyll-paginate
+
+#Others
+markdown: kramdown
+
+remote_theme: pages-themes/cayman@v0.2.0
+plugins:
+  - jekyll-remote-theme # add this line to the plugins list if you already have one
