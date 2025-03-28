@@ -19,10 +19,10 @@ Sports and Outdoors:
   - desc: You are looking for a pair of red running shoes in size 7. You want to shop more sustainably, so the shoes should be made from recycled material.
     type: simple
     constraint: high
-  - desc: You are looking for all the equipement necessary to start practicing badminton (e.g., racquet, shuttlecock).
+  - desc: You are looking for all the equipment necessary to start practicing badminton (e.g., racquet, shuttlecock).
     type: complex
     constraint: low
-  - desc: You are looking for all the equipement necessary to start practicing ice hockey (e.g., ice skates, helmet, protection gear). You want the helmet to be red.
+  - desc: You are looking for all the equipment necessary to start practicing ice hockey (e.g., ice skates, helmet, protection gear). You want the helmet to be red.
     type: complex
     constraint: medium
 
@@ -44,6 +44,6 @@ Cell phones & Accessories:
   - desc: You are looking for a new smartphone with a budget of $600. You want at least 16GB of internal storage memory.
     type: simple
     constraint: high
-  - desc: You are starting video content creation, you need to buy the equipement (e.g., phone, microphone, light) to make good quality videos.
+  - desc: You are starting video content creation, you need to buy the equipment (e.g., phone, microphone, light) to make good quality videos.
     type: complex
     constraint: low
